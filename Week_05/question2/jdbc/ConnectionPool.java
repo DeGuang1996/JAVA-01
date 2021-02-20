@@ -16,7 +16,7 @@ public class ConnectionPool {
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl("jdbc:mysql://localhost:3306/student");
         config.setUsername("root");
-        config.setPassword("password");
+        config.setPassword("1234");
         config.addDataSourceProperty("connectionTimeout", "1000"); // 连接超时：1秒
         config.addDataSourceProperty("idleTimeout", "60000"); // 空闲超时：60秒
         config.addDataSourceProperty("maximumPoolSize", "10"); // 最大连接数：10
