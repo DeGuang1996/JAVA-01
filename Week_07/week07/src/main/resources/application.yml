@@ -1,0 +1,22 @@
+##多数据源
+datasource:
+    #主库
+    master:
+        jdbcUrl: jdbc:mysql://localhost:3306/emall?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: 123
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    #从库
+    slave:
+        #并非url而是jdbcUrl(因为这个在获取数据源时一直报错，看了DataSource的属性才知道是jdbcUrl)
+        jdbcUrl: jdbc:mysql://localhost:3316/emall_slave?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: 123
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+##mybatis
+mybatis:
+    mapper-locations: classpath:mapperxml/*.xml
+    type-aliases-package: com.javatrainingcamp.week07.domain
+    check-config-location: true
+    config-location: classpath:mybatis-config.xml
